@@ -1,0 +1,23 @@
+﻿ActionBar {
+  background-color: #658ff1;
+  color: white;
+}
+
+.pocetniGrid {
+  margin-top: 250;
+}
+
+button {
+  margin-top: 20;
+  width: 100;
+  height: 50;
+  border-radius: 5;
+  background-color: #658ff1;
+}
+
+.naslov {
+  font-size: 26;
+  horizontal-align: center;
+  vertical-align: middle
+}
+
