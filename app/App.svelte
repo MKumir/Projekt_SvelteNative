@@ -1,10 +1,8 @@
-<frame>
-    <Home />
-    <!-- <LoginEkran /> -->
-</frame>
-
-
 <script lang="ts">
-    import Home from './components/Home.svelte'
-    // import LoginEkran from './screens/LoginEkran.svelte';
+  import PocetnaPage from "./pages/PocetnaPage.svelte";
 </script>
+
+
+<frame>
+  <PocetnaPage />
+</frame>
