@@ -8,6 +8,7 @@
     "@nativescript/theme": "~3.0.2",
     "nativescript-drop-down": "^6.0.2",
     "nativescript-materialdropdownlist": "^1.0.15",
+    "redux": "^4.2.0",
     "svelte-native": "~1.0.0",
     "svelte-navigator": "^3.2.2"
   },

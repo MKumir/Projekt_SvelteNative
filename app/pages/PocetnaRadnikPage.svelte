@@ -1,11 +1,11 @@
 <script>
+    import spremnik from '~/store/glavniReducer';
     import { navigate } from 'svelte-native'
     import PocetnaPage from './PocetnaPage.svelte'
-
     import { Template } from 'svelte-native/components'
-    import { ISPORUKE } from '../data/isporuke-podaci'
     import Isporuka from '../components/Isporuka.svelte'
-    let isporuke = ISPORUKE;
+    let state = spremnik.getState()
+    let isporuke = state.isporuke;
     let neisporuceneIsporuke = isporuke.filter(i => i.status === false)
 
     

@@ -2,7 +2,7 @@
     import { goBack } from "svelte-native";
 
     let proizvod = "";
-    let kolicina = "";
+    let kolicina = "0";
     let sektor = "";
     let status = "";
 
@@ -49,7 +49,7 @@
                 </stackLayout>
                 <label text="Kolicina:" />
                 <stackLayout class="okvir">
-                    <textField bind:text={kolicina} />
+                    <textField keyboardType='number' bind:text={kolicina} />
                 </stackLayout>
                 <label text="Sektor:" />
                 <stackLayout class="okvir">

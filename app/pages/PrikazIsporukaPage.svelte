@@ -1,9 +1,15 @@
 <script>
+    import spremnik from "~/store/glavniReducer";
     import { goBack } from "svelte-native";
     import { Template } from 'svelte-native/components'
-    import { ISPORUKE } from '../data/isporuke-podaci'
     import Isporuka from '../components/Isporuka.svelte'
-    let isporuke = ISPORUKE;
+    let state = spremnik.getState()
+    let isporuke = state.isporuke
+    // store.subscribe(() => {
+    //     state = store.getState();
+    // })
+
+    
 
 </script>
 

@@ -1,10 +1,11 @@
 <script>
+    import spremnik from "~/store/glavniReducer";
     import { goBack } from "svelte-native";
     import { Template } from 'svelte-native/components'
-    import { KORISNICI } from '../data/korisnici-podaci'
     import Korisnik from '../components/Korisnik.svelte'
     import Admin from '../components/Admin.svelte'
-    let korisnici = KORISNICI;
+    let state = spremnik.getState()
+    let korisnici = state.korisnici
 
 </script>
 

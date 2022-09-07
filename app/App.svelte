@@ -2,7 +2,7 @@
   import PocetnaPage from "./pages/PocetnaPage.svelte";
 </script>
 
+  <frame>
+    <PocetnaPage />
+  </frame>
 
-<frame>
-  <PocetnaPage />
-</frame>
