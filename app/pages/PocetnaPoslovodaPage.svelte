@@ -1,8 +1,20 @@
 <script>
+    import spremnik from '~/store/centralniSpremnik';
+    import { odjavaKorisnika } from '~/store/actions/login';
     import { navigate } from 'svelte-native'
     import PocetnaPage from './PocetnaPage.svelte'
     import UnosIsporukePage from './UnosIsporukePage.svelte';
     import PrikazIsporukaPage from './PrikazIsporukaPage.svelte';
+
+    let stanje = spremnik.getState()
+    let logiraniKorisnik = stanje.login.korisnik
+    let ime = logiraniKorisnik.ime
+    let prezime = logiraniKorisnik.prezime
+
+    const odjava = () => {
+        spremnik.dispatch(odjavaKorisnika())
+        navigate({ page: PocetnaPage})
+    }
     
 </script>
 
@@ -12,9 +24,9 @@
     <gridLayout class='glavniGrid'>
         <stackLayout>
             <label text='Prijavljeni ste kao:' />
-            <label text='Ime Prezime' />
+            <label class="imePrezime" text="{ime} {prezime}"/>
             <button class='odjavaBtn' text="ODJAVI SE" 
-                on:tap="{ () => navigate({ page: PocetnaPage}) }" 
+                on:tap={() => odjava()} 
             />
             <button class='bigBtn' text="UNOS ISPORUKE"
                 on:tap="{ () => navigate({ page: UnosIsporukePage}) }"     

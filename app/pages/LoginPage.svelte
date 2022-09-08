@@ -1,11 +1,13 @@
 <script>
+    import spremnik from "~/store/centralniSpremnik";
+    import { prijavaKorisnika } from "~/store/actions/login";
     import { navigate, goBack } from "svelte-native";
     import PocetnaPoslovodaPage from "./PocetnaPoslovodaPage.svelte";
     import PocetnaAdminPage from "./PocetnaAdminPage.svelte";
     import PocetnaRadnikPage from "./PocetnaRadnikPage.svelte";
-    import { KORISNICI } from "../data/korisnici-podaci"
 
-    let korisnici = KORISNICI
+    let stanje = spremnik.getState()
+    let korisnici = stanje.korisnici.korisnici
 
     let username = "";
     let pass = "";
@@ -15,15 +17,18 @@
         korisnici.map(k => {
             if (k.username === username && k.pass === pass) {
                 if (k.uloga === "poslovoda") {
-                    navigate({ page: PocetnaPoslovodaPage})
+                    spremnik.dispatch(prijavaKorisnika(k))
+                    navigate({ page: PocetnaPoslovodaPage })
                     prijavljen = true
                 }
                 if (k.uloga === "admin") {
-                    navigate({ page: PocetnaAdminPage})
+                    spremnik.dispatch(prijavaKorisnika(k))
+                    navigate({ page: PocetnaAdminPage })
                     prijavljen = true
                 }
                 if (k.uloga === "radnik") {
-                    navigate({ page: PocetnaRadnikPage})
+                    spremnik.dispatch(prijavaKorisnika(k))
+                    navigate({ page: PocetnaRadnikPage })
                     prijavljen = true
                 }
             }

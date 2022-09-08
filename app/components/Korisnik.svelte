@@ -1,5 +1,6 @@
 <script>
     export let korisnik;
+    export let brisanje;
 
 </script>
 
@@ -8,5 +9,5 @@
     <label class="celija" text={korisnik.prezime} width= "20%" />
     <label class="celija" text={korisnik.uloga} width= "20%" />
     <label class="celija" text={korisnik.username} width= "20%" />
-    <button class="btnBrisi" text="BRIŠI" width= "20%" />
+    <button on:tap={brisanje} class="btnBrisi" text="BRIŠI" width= "20%" />
 </stackLayout>

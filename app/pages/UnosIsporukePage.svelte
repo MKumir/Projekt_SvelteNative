@@ -1,37 +1,40 @@
 <script>
     import { goBack } from "svelte-native";
+import { bind, text } from "svelte/internal";
+    import spremnik from "~/store/centralniSpremnik";
+    import { dodavanjeIsporuke } from '../store/actions/isporuke'
+    
 
     let proizvod = "";
     let kolicina = "0";
-    let sektor = "";
-    let status = "";
+    let odabraniSektorIndex = 0
+    let status = false;
 
-    // let listaSektora = ['A', 'B', 'C', 'D']
-    // let listaStatusa = ['Isporučeno', 'Neisporučeno']
+    let listaSektora = ['A', 'B', 'C', 'D']
+    
 
     // const selectedIndexChanged = (e) => console.log(e.index)
 
-    // const novaIsporuka = () =>{
-    //     const noviObjekt = {
-    //         id: Math.random().toString(),
-    //         proizvod: unosProizvoda,
-    //         kolicina: unosKolicine,
-    //         sektor: unosSektora,
-    //         status: unosStatusa
-    //     }
-    //     if(unosProizvoda === '' || unosKolicine < 1)
-    //         alert('Neispravan unos')
-    //         else {
-    //             dispatch(dodajIsporuku(noviObjekt))
-    //             alert('Isporuka je dodana!')
-    //         }
+    const dodajIsporuku = () =>{
+        const noviObjekt = {
+            id: Math.random().toString(),
+            proizvod: proizvod,
+            kolicina: kolicina,
+            sektor: listaSektora[odabraniSektorIndex],
+            status: status
+        }
+        if(proizvod === '' || kolicina < 1)
+            alert('Neispravan unos')
+            else {
+                spremnik.dispatch(dodavanjeIsporuke(noviObjekt))
+                alert('Isporuka je dodana!')
+            }
        
-    //     postaviUnosProizvoda('')
-    //     postaviUnosKolicine('')
-    //     postaviUnosSektora('A')
-    //     postaviUnosStatusa(false)
-        
-    // }
+        proizvod = ''
+        kolicina = '0'
+        odabraniSektorIndex = 0
+        status = false
+    }
 
 </script>
 
@@ -39,7 +42,7 @@
     <actionBar class="barNaslovna" title="Unos Isporuke" />
     <gridLayout class="glavniGrid">
         <stackLayout>
-            <button class="returnBtn" text="⏎" on:tap="{goBack}" />
+            <button class="returnBtn2" text="⏎" on:tap={goBack} />
         </stackLayout>
         <stackLayout>
             <stackLayout class="unosIsporukeStack">
@@ -47,21 +50,29 @@
                 <stackLayout class="okvir">
                     <textField bind:text={proizvod}/>
                 </stackLayout>
-                <label text="Kolicina:" />
-                <stackLayout class="okvir">
-                    <textField keyboardType='number' bind:text={kolicina} />
+                <label text="Kolicina: {kolicina}" />
+                <stackLayout class="okvirSlider">
+                    <slider style="margin-top: 10" maxValue=100 bind:value={kolicina} />
+                    <!-- <textField keyboardType='number' bind:text={kolicina} /> -->
                 </stackLayout>
                 <label text="Sektor:" />
                 <stackLayout class="okvir">
-                    <textField bind:text={sektor} />
+                    <!-- <textField bind:text={sektor} /> -->
+                    <listPicker  
+                        style="height: 120"
+                        items={listaSektora} 
+                        bind:selectedIndex={odabraniSektorIndex} 
+                    />
                 </stackLayout>
-                <label text="Status:" />
-                <stackLayout class="okvir">
-                    <textField bind:text={status} />
+
+                <stackLayout>
+                    <label text="Isporučeno:" />
+                    <switch class="switchIsporuceno" bind:checked={status}/>
                 </stackLayout>
                 <button
-                    class="spremiBtn"
+                    class="spremiIspBtn"
                     text="SPREMI"
+                    on:tap={() => dodajIsporuku()}
                 />
             </stackLayout>
         </stackLayout>
