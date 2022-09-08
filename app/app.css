@@ -84,16 +84,19 @@
   border-color: black;
   border-width: 1;
   border-radius: 10;
-  margin: 20 0
+  margin: 20 0;
+  font-size: 16;
 }
 
-.okvirPodatakKorisnik {
+.okvirPodKor {
   border-color: black;
   border-width: 1;
   border-radius: 10;
   margin: 14 0;
-
+  font-size: 16;
 }
+
+
 
 .okvirSlider {
   border-color: #65a9f1;
@@ -174,6 +177,14 @@
   color: white;
 }
 
+.pretraziBtn { 
+  margin-top: 70;
+  height: 50;
+  border-radius: 5;
+  background-color: lightgray;
+  color: white;
+}
+
 .spremiKorBtn {
   margin-top: 30;
   height: 50;
@@ -203,6 +214,64 @@
   margin-top: 20;
   margin-right: 150;
 }
+
+.filterSektor {
+  height: 105;
+  width: 120;
+  border-color: black;
+  border-width: 1;
+  border-radius: 10;
+  margin: 65 0
+}
+
+.filterSektorUnos {
+  height: 105;
+  width: 120;
+  border-color: black;
+  border-width: 1;
+  border-radius: 10;
+  margin: 20 0
+}
+
+.filterUloga {
+  height: 105;
+  width: 100;
+  border-color: black;
+  border-width: 1;
+  border-radius: 10;
+  margin: 14 0
+}
+
+.labelFilter {
+  margin-top: 105;
+  margin-left: 10;
+  margin-right: 40; 
+}
+
+.searchStack {
+  font-size: 16;
+}
+
+.filterStack {
+  margin-top: 50;
+  font-size: 16;
+}
+
+.isporukaSearch {
+  margin-top: 15;
+  height: 35;
+}
+
+.pretragaIsporukeStack {
+  padding: 30%;
+  margin-top: 50;
+  horizontal-align: center
+}
+
+
+
+
+
 
 
 

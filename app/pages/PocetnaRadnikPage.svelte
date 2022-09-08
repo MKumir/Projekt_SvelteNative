@@ -12,6 +12,7 @@
     let prezime = logiraniKorisnik.prezime
     let isporuke = stanje.isporuke.isporuke
     let neisporuceneIsporuke = isporuke.filter(i => i.status === false)
+    
     spremnik.subscribe(() => {
          stanje = spremnik.getState();
          isporuke = stanje.isporuke.isporuke

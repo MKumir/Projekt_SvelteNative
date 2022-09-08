@@ -50,12 +50,12 @@
         <stackLayout>
             <stackLayout class="loginStack">
                 <label text="Korisnicko ime:" />
-                <stackLayout class="okvir">
-                    <textField bind:text={username}/>
+                <stackLayout>
+                    <textField class="okvir" bind:text={username}/>
                 </stackLayout>
                 <label text="Lozinka:" />
-                <stackLayout class="okvir">
-                    <textField bind:text={pass} secure={true} />
+                <stackLayout>
+                    <textField class="okvir" bind:text={pass} secure={true} />
                 </stackLayout>
                 <button
                     class="prijaviSeBtn"

@@ -44,7 +44,7 @@
                         {/if}
                     </Template>
                 </listView>
-        </stackLayout>
+            </stackLayout>
         </stackLayout>
     </gridLayout>
 </page>

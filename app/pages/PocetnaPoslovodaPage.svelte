@@ -4,7 +4,7 @@
     import { navigate } from 'svelte-native'
     import PocetnaPage from './PocetnaPage.svelte'
     import UnosIsporukePage from './UnosIsporukePage.svelte';
-    import PrikazIsporukaPage from './PrikazIsporukaPage.svelte';
+    import PretragaIsporukaPage from './PretragaIsporukaPage.svelte'
 
     let stanje = spremnik.getState()
     let logiraniKorisnik = stanje.login.korisnik
@@ -32,7 +32,7 @@
                 on:tap="{ () => navigate({ page: UnosIsporukePage}) }"     
             />
             <button class='bigBtn' text="ISPORUKE"
-                on:tap="{ () => navigate({ page: PrikazIsporukaPage}) }"     
+                on:tap="{ () => navigate({ page: PretragaIsporukaPage}) }"     
             />
         </stackLayout>
     </gridLayout>

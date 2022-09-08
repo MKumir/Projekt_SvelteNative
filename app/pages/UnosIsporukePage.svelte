@@ -1,12 +1,12 @@
 <script>
     import { goBack } from "svelte-native";
-import { bind, text } from "svelte/internal";
     import spremnik from "~/store/centralniSpremnik";
     import { dodavanjeIsporuke } from '../store/actions/isporuke'
     
 
     let proizvod = "";
     let kolicina = "0";
+    let sektor = ""
     let odabraniSektorIndex = 0
     let status = false;
 
@@ -20,7 +20,7 @@ import { bind, text } from "svelte/internal";
             id: Math.random().toString(),
             proizvod: proizvod,
             kolicina: kolicina,
-            sektor: listaSektora[odabraniSektorIndex],
+            sektor: sektor,
             status: status
         }
         if(proizvod === '' || kolicina < 1)
@@ -33,6 +33,7 @@ import { bind, text } from "svelte/internal";
         proizvod = ''
         kolicina = '0'
         odabraniSektorIndex = 0
+        sektor= ''
         status = false
     }
 
@@ -47,8 +48,8 @@ import { bind, text } from "svelte/internal";
         <stackLayout>
             <stackLayout class="unosIsporukeStack">
                 <label text="Proizvod:" />
-                <stackLayout class="okvir">
-                    <textField bind:text={proizvod}/>
+                <stackLayout>
+                    <textField hint="Unesi proizvod..." class="okvir" bind:text={proizvod}/>
                 </stackLayout>
                 <label text="Kolicina: {kolicina}" />
                 <stackLayout class="okvirSlider">
@@ -56,15 +57,16 @@ import { bind, text } from "svelte/internal";
                     <!-- <textField keyboardType='number' bind:text={kolicina} /> -->
                 </stackLayout>
                 <label text="Sektor:" />
-                <stackLayout class="okvir">
+                <stackLayout>
                     <!-- <textField bind:text={sektor} /> -->
                     <listPicker  
-                        style="height: 120"
+                        horizontalAlignment="left"
+                        class="filterSektorUnos"
                         items={listaSektora} 
-                        bind:selectedIndex={odabraniSektorIndex} 
+                        bind:selectedIndex={odabraniSektorIndex}
+                        bind:selectedValue={sektor} 
                     />
                 </stackLayout>
-
                 <stackLayout>
                     <label text="Isporučeno:" />
                     <switch class="switchIsporuceno" bind:checked={status}/>

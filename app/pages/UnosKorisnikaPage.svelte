@@ -2,7 +2,6 @@
     import spremnik from "~/store/centralniSpremnik";
     import { dodavanjeKorisnika } from "~/store/actions/korisnici";
     import { goBack } from "svelte-native";
-import { ScrollView } from "@nativescript/core";
 
     let ime = "";
     let prezime = "";
@@ -45,29 +44,30 @@ import { ScrollView } from "@nativescript/core";
         </stackLayout>
         <stackLayout class="unosKorisnikaStack">
             <label text="Ime:" />
-            <stackLayout class="okvirPodatakKorisnik">
-                <textField bind:text={ime}/>
+            <stackLayout>
+                <textField hint="Unesi ime..." class="okvirPodKor" bind:text={ime}/>
             </stackLayout>
             <label text="Prezime:" />
-            <stackLayout class="okvirPodatakKorisnik">
-                <textField bind:text={prezime} />
+            <stackLayout>
+                <textField hint="Unesi prezime..." class="okvirPodKor" bind:text={prezime} />
             </stackLayout>
             <label text="Uloga:" />
-            <stackLayout class="okvirPodatakKorisnik">
+            <stackLayout>
                 <!-- <textField bind:text={uloga} /> -->
-                <listPicker  
-                    style="height: 110;"
+                <listPicker 
+                    horizontalAlignment="left"
+                    class="filterUloga"
                     items={listaUloga} 
                     bind:selectedIndex={odabranaUlogaIndex} 
                 />
             </stackLayout>
             <label text="Korisnicko ime:" />
-            <stackLayout class="okvirPodatakKorisnik">
-                <textField bind:text={username} />
+            <stackLayout>
+                <textField hint="Unesi korisnicko ime..." class="okvirPodKor" bind:text={username} />
             </stackLayout>
             <label text="Lozinka:" />
-            <stackLayout class="okvirPodatakKorisnik">
-                <textField bind:text={pass} />
+            <stackLayout>
+                <textField hint="Unesi lozinku..." class="okvirPodKor" bind:text={pass} />
             </stackLayout>
             <button
                 class="spremiKorBtn"
