@@ -56,8 +56,38 @@
             </listView>
         </stackLayout>
     </gridLayout>
-    
 </page>
+
+<style>
+    .barNaslovna{
+        background-color: #658ff1;
+        color: white;
+    }
+    .glavniGrid {
+        padding: 30%;
+    }
+    .imePrezime {
+        margin-top: 20 ;
+        font-size: 16;
+        font-style: italic;
+    }
+    .odjavaBtn {
+        horizontal-align: left;
+        margin-top: 20;
+        width: 100;
+        height: 40;
+        border-radius: 5;
+        background-color: rgb(255, 188, 122);
+        color: whitesmoke
+    }
+    .headerStack {
+        margin-top: 35;
+        margin-bottom: 20;
+        height: 35;
+        font-size: 12.5;
+        text-align: center;
+    }
+</style>
 
 
 

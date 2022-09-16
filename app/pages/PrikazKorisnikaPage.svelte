@@ -49,3 +49,32 @@
     </gridLayout>
 </page>
 
+<style>
+    .barNaslovna{
+        background-color: #658ff1;
+        color: white;
+    }
+    .gridPrikaz {
+        padding: 5%;
+    }
+    .returnBtn {
+        margin-top: 15;
+        margin-left: 10;
+        padding-top: 6%;
+        horizontal-align: left;
+        border-radius: 10;
+        background-color: #658ff1;
+        color: whitesmoke;
+        font-size: 20;
+        width: 70;
+        height: 110px;
+    }
+    .headerStack {
+        margin-top: 35;
+        margin-bottom: 20;
+        height: 35;
+        font-size: 12.5;
+        text-align: center;
+    }
+</style>
+

@@ -36,8 +36,41 @@
             />
         </stackLayout>
     </gridLayout>
-    
 </page>
+
+<style>
+    .barNaslovna {
+        background-color: #658ff1;
+        color: white;
+    }
+    .glavniGrid {
+        padding: 30%;
+    }
+    .imePrezime {
+        margin-top: 20 ;
+        font-size: 16;
+        font-style: italic;
+    }
+    .odjavaBtn {
+        horizontal-align: left;
+        margin-top: 20;
+        width: 100;
+        height: 40;
+        border-radius: 5;
+        background-color: rgb(255, 188, 122);
+        color: whitesmoke
+    }
+    .bigBtn {
+        margin-top: 100;
+        width: 300;
+        height: 100;
+        align-self: center;
+        background-color: #658ff1;
+        color: whitesmoke;
+        border-radius: 20;
+        font-size: 20;
+    }
+</style>
 
 
 

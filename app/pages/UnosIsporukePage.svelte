@@ -11,9 +11,6 @@
     let status = false;
 
     let listaSektora = ['A', 'B', 'C', 'D']
-    
-
-    // const selectedIndexChanged = (e) => console.log(e.index)
 
     const dodajIsporuku = () =>{
         const noviObjekt = {
@@ -29,21 +26,19 @@
                 spremnik.dispatch(dodavanjeIsporuke(noviObjekt))
                 alert('Isporuka je dodana!')
             }
-       
         proizvod = ''
         kolicina = '0'
         odabraniSektorIndex = 0
         sektor= ''
         status = false
     }
-
 </script>
 
 <page>
     <actionBar class="barNaslovna" title="Unos Isporuke" />
     <gridLayout class="glavniGrid">
         <stackLayout>
-            <button class="returnBtn2" text="⏎" on:tap={goBack} />
+            <button class="returnBtn" text="⏎" on:tap={goBack} />
         </stackLayout>
         <stackLayout>
             <stackLayout class="unosIsporukeStack">
@@ -52,13 +47,11 @@
                     <textField hint="Unesi proizvod..." class="okvir" bind:text={proizvod}/>
                 </stackLayout>
                 <label text="Kolicina: {kolicina}" />
-                <stackLayout class="okvirSlider">
-                    <slider style="margin-top: 10" maxValue=100 bind:value={kolicina} />
-                    <!-- <textField keyboardType='number' bind:text={kolicina} /> -->
+                <stackLayout class="stackSlider">
+                    <slider class="sliderKolicina" maxValue=100 bind:value={kolicina} />
                 </stackLayout>
                 <label text="Sektor:" />
                 <stackLayout>
-                    <!-- <textField bind:text={sektor} /> -->
                     <listPicker  
                         horizontalAlignment="left"
                         class="filterSektorUnos"
@@ -80,5 +73,66 @@
         </stackLayout>
     </gridLayout>
 </page>
+
+<style>
+    .barNaslovna{
+        background-color: #658ff1;
+        color: white;
+    }
+    .glavniGrid {
+        padding: 30%;
+    }
+    .returnBtn {
+        padding-top: 6%;
+        horizontal-align: left;
+        border-radius: 10;
+        background-color: #658ff1;
+        color: whitesmoke;
+        font-size: 20;
+        width: 70;
+        height: 110px;
+    }
+    .unosIsporukeStack {
+        horizontal-align: center;
+        margin-top: 75;
+        width: 200;
+    }
+    .okvir {
+        border-color: black;
+        border-width: 1;
+        border-radius: 10;
+        margin: 20 0;
+        font-size: 16;
+    }
+    .stackSlider {
+        border-color: #65a9f1;
+        border-width: 2;
+        border-radius: 10;
+        margin: 20 0;
+        height: 40;
+    }
+    .sliderKolicina {
+        margin-top: 10;
+    }
+    .filterSektorUnos {
+        height: 105;
+        width: 120;
+        border-color: black;
+        border-width: 1;
+        border-radius: 10;
+        margin: 20 0
+    }
+    .switchIsporuceno {
+        margin-top: 20;
+        margin-right: 150;
+    }
+    .spremiIspBtn {
+        margin-top: 70;
+        height: 50;
+        border-radius: 5;
+        background-color: #658ff1;
+        color: white;
+    }
+</style>
 
 

@@ -38,22 +38,21 @@
 
 <page>
     <actionBar class="barNaslovna" title="Unos Korisnika" />
-    <gridLayout style="padding: 5%">
+    <gridLayout style="glavniGrid">
         <stackLayout>
             <button class="returnBtn" text="⏎" on:tap={goBack} />
         </stackLayout>
         <stackLayout class="unosKorisnikaStack">
             <label text="Ime:" />
             <stackLayout>
-                <textField hint="Unesi ime..." class="okvirPodKor" bind:text={ime}/>
+                <textField hint="Unesi ime..." class="okvir" bind:text={ime}/>
             </stackLayout>
             <label text="Prezime:" />
             <stackLayout>
-                <textField hint="Unesi prezime..." class="okvirPodKor" bind:text={prezime} />
+                <textField hint="Unesi prezime..." class="okvir" bind:text={prezime} />
             </stackLayout>
             <label text="Uloga:" />
             <stackLayout>
-                <!-- <textField bind:text={uloga} /> -->
                 <listPicker 
                     horizontalAlignment="left"
                     class="filterUloga"
@@ -63,11 +62,11 @@
             </stackLayout>
             <label text="Korisnicko ime:" />
             <stackLayout>
-                <textField hint="Unesi korisnicko ime..." class="okvirPodKor" bind:text={username} />
+                <textField hint="Unesi korisnicko ime..." class="okvir" bind:text={username} />
             </stackLayout>
             <label text="Lozinka:" />
             <stackLayout>
-                <textField hint="Unesi lozinku..." class="okvirPodKor" bind:text={pass} />
+                <textField hint="Unesi lozinku..." class="okvir" bind:text={pass} />
             </stackLayout>
             <button
                 class="spremiKorBtn"
@@ -78,4 +77,52 @@
     </gridLayout>
 </page>
 
+<style>
+    .barNaslovna{
+        background-color: #658ff1;
+        color: white;
+    }
+    .glavniGrid {
+        padding: 5%;
+    }
+    .returnBtn {
+        margin-top: 15;
+        margin-left: 10;
+        padding-top: 6%;
+        horizontal-align: left;
+        border-radius: 10;
+        background-color: #658ff1;
+        color: whitesmoke;
+        font-size: 20;
+        width: 70;
+        height: 110px;
+    }
+    .unosKorisnikaStack {
+        horizontal-align: center;
+        margin-top: 70;
+        width: 200;
+    }
+    .okvir {
+        border-color: black;
+        border-width: 1;
+        border-radius: 10;
+        margin: 14 0;
+        font-size: 16;
+    }
+    .filterUloga {
+        height: 105;
+        width: 100;
+        border-color: black;
+        border-width: 1;
+        border-radius: 10;
+        margin: 14 0
+    }
+    .spremiKorBtn {
+        margin-top: 30;
+        height: 50;
+        border-radius: 5;
+        background-color: #658ff1;
+        color: white;
+    }
+</style>
 

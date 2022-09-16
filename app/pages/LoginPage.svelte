@@ -36,16 +36,14 @@
         if(prijavljen === false) {
             alert('Neispravni podaci')
         }
-        
     }
-
 </script>
 
 <page>
     <actionBar class="barLogin" title="Login" />
     <gridLayout class="glavniGrid">
         <stackLayout>
-            <button class="returnBtnLogin" text="⏎" on:tap="{goBack}" />
+            <button class="returnBtn" text="⏎" on:tap="{goBack}" />
         </stackLayout>
         <stackLayout>
             <stackLayout class="loginStack">
@@ -66,3 +64,42 @@
         </stackLayout>
     </gridLayout>
 </page>
+
+<style>
+    .barLogin {
+        background-color: rgb(144, 238, 191);
+        color: gray;
+    }
+    .glavniGrid {
+        padding: 30%;
+    }
+    .returnBtn {
+        padding-top: 6%;
+        horizontal-align: left;
+        border-radius: 10;
+        background-color: rgb(144, 238, 191);
+        color: gray;
+        font-size: 20;
+        width: 70;
+        height: 110px;
+    }
+    .loginStack {
+        horizontal-align: center;
+        margin-top: 150;
+        width: 200;
+    }
+    .okvir {
+        border-color: black;
+        border-width: 1;
+        border-radius: 10;
+        margin: 20 0;
+        font-size: 16;
+    }
+    .prijaviSeBtn {
+        margin-top: 20;
+        height: 50;
+        border-radius: 5;
+        background-color: rgb(144, 238, 191);
+        color: gray
+    }
+</style>
